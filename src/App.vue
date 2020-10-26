@@ -1,20 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
     <div v-if="error">Parent: {{ error }}</div>
     <Suspense>
       <template #default>
         <Users />
       </template>
       <template #fallback>
-        <div>Loading your amazing vuesers...</div>
+        <div>Loading...</div>
       </template>
     </Suspense>
   </div>
 </template>
 
 <script>
-import Users from "./components/Users.vue";
+import Users from "./components/Dashboard.vue";
 import { ref, onErrorCaptured } from "vue";
 export default {
   name: "App",

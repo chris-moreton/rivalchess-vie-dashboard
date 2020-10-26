@@ -7,16 +7,21 @@ const state = reactive({
     loading: false,
 });
 
-export default function useUsers() {
+export default function getStatistics() {
     const load = async () => {
-        if (!state.loaded) {
+        if (!state.loading) {
             try {
+                state.loading = true
                 const usersResponse = await fetch(
                     "http://rivalchess-statsapi-lb-937543031.eu-west-2.elb.amazonaws.com/matchUpStats"
                 );
                 state.users = await usersResponse.json();
+                state.loading = false
+                setInterval(load, 10000)
             } catch (e) {
                 state.error = e;
+                state.loading = false
+                setInterval(load, 60000)
             }
         }
     };
