@@ -20,13 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1817a72e-a2cd-4206-86fb-02a7e1fd911b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/i.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SecondaryUsage.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MatchUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_push.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker_push.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HelloWorld.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +78,7 @@
       <workItem from="1603657965617" duration="94000" />
       <workItem from="1603658064884" duration="12814000" />
       <workItem from="1603725241719" duration="333000" />
-      <workItem from="1603725575729" duration="3587000" />
+      <workItem from="1603725575729" duration="6077000" />
     </task>
     <servers />
   </component>

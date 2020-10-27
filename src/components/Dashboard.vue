@@ -1,5 +1,6 @@
 <template>
   <table>
+    <h1>Total matches played: {{ users.totalMatchesPlayed }}</h1>
     <tr>
       <td>
         <h1>Match Ups</h1>
