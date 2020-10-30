@@ -1,12 +1,12 @@
 <template>
-  <tr border="1"><td>{{ user.engine1 }}</td><td>{{ user.engine2 }}</td><td>{{ user.result }}</td><td>{{ user.cnt }}</td></tr>
+  <tr border="1"><td>{{ matchUp.engine1 }}</td><td>{{ matchUp.engine2 }}</td><td>{{ matchUp.result }}</td><td>{{ matchUp.cnt }}</td></tr>
 </template>
 
 <script>
 export default {
-  name: "User",
+  name: "MatchUp",
   props: {
-    user: Object
+    matchUp: Object
   }
 };
 </script>

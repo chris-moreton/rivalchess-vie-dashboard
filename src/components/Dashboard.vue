@@ -1,17 +1,17 @@
 <template>
   <table>
-    <h1>Total matches played: {{ users.totalMatchesPlayed }}</h1>
+    <AsyncOverview v-bind:totalMatchesPlayed="totalMatchesPlayed"/>
     <tr>
       <td>
         <h1>Match Ups</h1>
         <table border="1">
-        <AsyncUser v-for="user in users.matchUps" :user="user" />
+        <AsyncMatchUp v-for="matchUp in data.matchUps" :matchUp="matchUp" />
         </table>
       </td>
       <td valign="top">
         <h1>Rankings</h1>
         <table border="1">
-          <AsyncRanking v-for="user in users.rankings" :user="user" />
+          <AsyncRanking v-for="ranking in data.rankings" :ranking="ranking" />
         </table>
       </td>
     </tr>
@@ -21,9 +21,9 @@
 <script>
 import { defineAsyncComponent } from "vue";
 import Loading from "./Loading.vue";
-import getStatistics from "../modules/users";
+import getStatistics from "../modules/data";
 
-const AsyncUser = defineAsyncComponent({
+const AsyncMatchUp = defineAsyncComponent({
   loader: () => import("./MatchUp.vue"),
   loadingComponent: Loading,
   delay: 200,
@@ -37,16 +37,24 @@ const AsyncRanking = defineAsyncComponent({
   suspensible: false
 });
 
+const AsyncOverview = defineAsyncComponent({
+  loader: () => import("./Overview.vue" ),
+  loadingComponent: Loading,
+  delay: 200,
+  suspensible: false
+});
+
 export default {
-  name: "Users",
+  name: "data",
   async setup() {
-    const { users, error, load } = getStatistics();
+    const { data, error, load, totalMatchesPlayed } = getStatistics();
     await load();
-    return { users, error };
+    return { data, error, totalMatchesPlayed };
   },
   components: {
-    AsyncUser,
-    AsyncRanking
+    AsyncMatchUp,
+    AsyncRanking,
+    AsyncOverview
   },
 };
 </script>

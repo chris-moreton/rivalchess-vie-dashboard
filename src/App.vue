@@ -3,7 +3,7 @@
     <div v-if="error">Parent: {{ error }}</div>
     <Suspense>
       <template #default>
-        <Users />
+        <MatchUps />
       </template>
       <template #fallback>
         <div>Loading...</div>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Users from "./components/Dashboard.vue";
+import MatchUps from "./components/Dashboard.vue";
 import { ref, onErrorCaptured } from "vue";
 export default {
   name: "App",
@@ -25,7 +25,7 @@ export default {
     return { error };
   },
   components: {
-    Users
+    MatchUps
   }
 };
 </script>

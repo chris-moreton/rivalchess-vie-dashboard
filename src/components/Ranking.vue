@@ -1,12 +1,12 @@
 <template>
-  <tr border="1"><td>{{ user.name }}</td><td>{{ user.elo }}</td><td>{{ user.played }}</td></tr>
+  <tr border="1"><td>{{ ranking.name }}</td><td>{{ ranking.elo }}</td><td>{{ ranking.played }}</td></tr>
 </template>
 
 <script>
 export default {
   name: "Ranking",
   props: {
-    user: Object
+    ranking: Object
   }
 };
 </script>
