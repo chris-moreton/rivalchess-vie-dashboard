@@ -20,11 +20,9 @@ export default function getStatistics() {
                 let matchUps = state.data['matchUps']
                 state.totalMatchesPlayed = matchUps.reduce((t,n) => t + n.cnt, 0)
                 state.loading = false
-                setInterval(load, 60000)
             } catch (e) {
                 state.error = e;
                 state.loading = false
-                setInterval(load, 60000)
             }
         }
     };
