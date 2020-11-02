@@ -5,7 +5,7 @@
       <td>
         <h1>Match Ups</h1>
         <table border="1">
-          <tr><th>Engine 1</th><th>Engine 2</th><th>Wins</th><th>Losses</th><th>Draws</th><th>Total</th><th>As White</th></tr>
+          <tr><th>Engine 1</th><th>Engine 2</th><th>Win %</th><th>Wins</th><th>Losses</th><th>Draws</th><th>Total</th><th>As White</th></tr>
         <AsyncMatchUp v-for="matchUp in data.matchUpsConsolidated" :matchUp="matchUp" />
         </table>
       </td>
@@ -55,7 +55,7 @@ export default {
   async setup() {
     const { data, error, load, totalMatchesPlayed } = getStatistics();
     await load();
-    setInterval(await load, 10000)
+    setInterval(await load, 5000)
 
     return { data, error, totalMatchesPlayed };
   },
