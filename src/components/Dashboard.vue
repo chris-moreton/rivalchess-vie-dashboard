@@ -1,16 +1,16 @@
 <template>
   <table>
-    <AsyncOverview v-bind:totalMatchesPlayed="totalMatchesPlayed"/>
     <tr>
-      <td>
-        <h1>Match Ups</h1>
-        <table border="1">
-          <tr><th>Engine 1</th><th>Engine 2</th><th>Win %</th><th>Wins</th><th>Losses</th><th>Draws</th><th>Total</th><th>As White</th></tr>
-        <AsyncMatchUp v-for="matchUp in data.matchUpsConsolidated" :matchUp="matchUp" />
-        </table>
+      <td valign="top">
+        <AsyncMatchUpTable :matchUpsConsolidated="data.matchUpsConsolidated" :engineVersion="'chess22k-1.14'"/>
       </td>
       <td valign="top">
-        <h1>Rankings</h1>
+        <AsyncMatchUpTable :matchUpsConsolidated="data.matchUpsConsolidated" :engineVersion="'cuckoo110'"/>
+      </td>
+      <td valign="top">
+        <AsyncMatchUpTable :matchUpsConsolidated="data.matchUpsConsolidated" :engineVersion="'1.0.3'"/>
+      </td>
+      <td valign="top" rowspan="2">
         <table border="1">
           <tr>
             <th>Engine</th>
@@ -21,7 +21,20 @@
         </table>
       </td>
     </tr>
+    <tr>
+      <td valign="top">
+        <AsyncMatchUpTable :matchUpsConsolidated="data.matchUpsConsolidated" :engineVersion="'38.0.0'"/>
+      </td>
+      <td valign="top">
+        <AsyncMatchUpTable :matchUpsConsolidated="data.matchUpsConsolidated" :engineVersion="'34.0.2'"/>
+      </td>
+      <td valign="top">
+        <AsyncMatchUpTable :matchUpsConsolidated="data.matchUpsConsolidated" :engineVersion="'00.0.1'"/>
+      </td>
+    </tr>
   </table>
+  <AsyncOverview :totalMatchesPlayed="totalMatchesPlayed"/>
+
 </template>
 
 <script>
@@ -29,8 +42,8 @@ import { defineAsyncComponent } from "vue";
 import Loading from "./Loading.vue";
 import getStatistics from "../modules/data";
 
-const AsyncMatchUp = defineAsyncComponent({
-  loader: () => import("./MatchUp.vue"),
+const AsyncMatchUpTable = defineAsyncComponent({
+  loader: () => import("./MatchUpTable.vue" ),
   loadingComponent: Loading,
   delay: 200,
   suspensible: false
@@ -51,16 +64,15 @@ const AsyncOverview = defineAsyncComponent({
 });
 
 export default {
-  name: "data",
+  name: "Dashboard",
   async setup() {
     const { data, error, load, totalMatchesPlayed } = getStatistics();
     await load();
     setInterval(await load, 5000)
-
     return { data, error, totalMatchesPlayed };
   },
   components: {
-    AsyncMatchUp,
+    AsyncMatchUpTable,
     AsyncRanking,
     AsyncOverview
   },
@@ -68,4 +80,5 @@ export default {
 </script>
 
 <style>
+
 </style>

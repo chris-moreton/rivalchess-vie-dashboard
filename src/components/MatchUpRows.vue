@@ -1,5 +1,6 @@
 <template>
-  <tr border="1" v-if="matchUp.engine1 == '38.0.0'" :class="matchUp.engine1Wins > matchUp.engine2Wins ? 'winner' : 'loser'">
+  <tr border="1" v-if="matchUp.engine1 === engineVersion"
+      :class="matchUp.engine1Wins > matchUp.engine2Wins ? 'winner' : (matchUp.engine1Wins === matchUp.engine2Wins ? 'draw' : 'loser')">
     <td>{{ matchUp.engine1 }}</td>
     <td>{{ matchUp.engine2 }}</td>
     <td>{{ (matchUp.engine1Wins / (matchUp.engine1Wins + matchUp.engine2Wins)) * 100 | a }}%</td>
@@ -13,9 +14,10 @@
 
 <script>
 export default {
-  name: "MatchUp",
+  name: "MatchUpRow",
   props: {
-    matchUp: Object
+    matchUp: Object,
+    engineVersion: String
   }
 };
 </script>
@@ -24,6 +26,11 @@ export default {
 .winner {
   background-color: #00dd00;
   color: black
+}
+
+.draw {
+  background-color: #999999;
+  color: white
 }
 
 .loser {
