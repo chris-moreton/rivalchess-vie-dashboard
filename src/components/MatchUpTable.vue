@@ -1,9 +1,11 @@
 
 <template>
+  <div  style="float:left" class="collapse" v-bind:id="'engine' + engineVersion.replaceAll('.','_')">
   <table border="1">
     <tr><th>Engine 1</th><th>Engine 2</th><th>Win %</th><th>Wins</th><th>Losses</th><th>Draws</th><th>Total</th><th>As White</th></tr>
     <AsyncMatchUpRows v-for="matchUp in matchUpsConsolidated" :matchUp="matchUp" :engineVersion="engineVersion"/>
   </table>
+  </div>
 </template>
 
 <script>

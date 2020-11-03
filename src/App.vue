@@ -1,3 +1,4 @@
+
 <template>
   <div id="app">
     <div v-if="error">Parent: {{ error }}</div>
@@ -31,6 +32,7 @@ export default {
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

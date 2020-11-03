@@ -1,15 +1,16 @@
 <template>
+  <AsyncOverview :totalMatchesPlayed="totalMatchesPlayed"/>
+
   <table>
     <tr>
-      <td>
-        <AsyncMatchUpTables :data="data" />
-      </td>
       <td valign="top" rowspan="2">
         <AsyncRankingsTable :rankings="data.rankings" />
       </td>
+      <td valign="top">
+        <AsyncMatchUpTables :data="data" />
+      </td>
     </tr>
   </table>
-  <AsyncOverview :totalMatchesPlayed="totalMatchesPlayed"/>
 
 </template>
 
@@ -56,5 +57,8 @@ export default {
 </script>
 
 <style>
-
+table {
+  margin-left:2em;
+  margin-top:1em;
+}
 </style>
