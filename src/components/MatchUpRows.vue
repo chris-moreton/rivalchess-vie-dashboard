@@ -24,8 +24,8 @@ export default {
 
 <style>
 .winner {
-  background-color: #00dd00;
-  color: black
+  background-color: #009900;
+  color: white
 }
 
 .draw {
@@ -34,7 +34,7 @@ export default {
 }
 
 .loser {
-  background-color: #dd0000;
+  background-color: #990000;
   color: white
 }
 </style>

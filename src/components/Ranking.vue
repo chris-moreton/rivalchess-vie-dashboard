@@ -1,10 +1,10 @@
 <template>
   <tr border="1">
-    <td>
+    <td nowrap align="left" style="padding:0.2em">
       <a class="collapsed" data-toggle="collapse" v-bind:href="'#engine' + ranking.name.replaceAll('.','_')" role="button" aria-expanded="false" aria-controls="collapseExample">
         {{ ranking.name }}
       </a>
-      </td>
+    </td>
     <td>{{ ranking.elo }}</td>
     <td>{{ ranking.played }}</td>
   </tr>
