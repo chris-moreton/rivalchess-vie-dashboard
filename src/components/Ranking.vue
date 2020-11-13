@@ -5,8 +5,9 @@
         {{ ranking.name }}
       </a>
     </td>
-    <td>{{ ranking.elo }}</td>
     <td>{{ ranking.played }}</td>
+    <td>{{ ranking.elo }}</td>
+    <td>{{ ranking.vie }}</td>
   </tr>
 </template>
 

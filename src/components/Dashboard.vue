@@ -45,7 +45,7 @@ export default {
   async setup() {
     const { data, error, load, totalMatchesPlayed } = getStatistics();
     await load();
-    setInterval(await load, 5000)
+    setInterval(await load, 10000)
     return { data, error, totalMatchesPlayed };
   },
   components: {

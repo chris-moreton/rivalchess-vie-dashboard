@@ -3,8 +3,9 @@
   <table border="1">
     <tr>
       <th>Engine</th>
-      <th>ELO</th>
       <th>Played</th>
+      <th>ELO</th>
+      <th>Vie</th>
     </tr>
     <AsyncRanking v-for="ranking in rankings" :ranking="ranking" />
   </table>

@@ -6,9 +6,6 @@
       <template #default>
         <Dashboard />
       </template>
-      <template #fallback>
-        <div>Loading...</div>
-      </template>
     </Suspense>
   </div>
 </template>
